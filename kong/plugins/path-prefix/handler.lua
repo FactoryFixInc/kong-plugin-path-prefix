@@ -1,8 +1,8 @@
-local plugin = require("kong.plugins.base_plugin"):extend()
 
-function plugin:new()
-    plugin.super.new(self, "path-prefix")
-end
+local PathPrefixHandler = {
+  VERSION  = "1.0.0",
+  PRIORITY = 800,
+}
 
 local function escape_hyphen(conf)
     local path_prefix = conf.path_prefix
@@ -23,8 +23,8 @@ local function add_header(conf, path)
     end
 end
 
-function plugin:access(plugin_conf)
-    plugin.super.access(self)
+function PathPrefixHandler:access(plugin_conf)
+    PathPrefixHandler.super.access(self)
 
     local service_path = ngx.ctx.service.path or ""
     local full_path = kong.request.get_path()
@@ -45,6 +45,4 @@ function plugin:access(plugin_conf)
     kong.service.request.set_path(new_path)
 end
 
-plugin.PRIORITY = 800
-
-return plugin
+return PathPrefixHandler
