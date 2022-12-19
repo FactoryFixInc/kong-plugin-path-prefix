@@ -5,7 +5,7 @@ local pluginName = "path-prefix"
 
 supported_platforms = {"linux", "macosx"}
 source = {
-  url = "git+https://github.com/SuriyaRuk/exit-plugin-kong.git/kong-plugin-path-prefix.git"
+  url = "git+https://github.com/SuriyaRuk/kong-plugin-path-prefix.git"
 }
 
 description = {
