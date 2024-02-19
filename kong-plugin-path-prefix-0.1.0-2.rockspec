@@ -1,11 +1,11 @@
 package = "kong-plugin-path-prefix"
-version = "0.1.0-1"
+version = "0.1.0-2"
 
 local pluginName = "path-prefix"
 
 supported_platforms = {"linux", "macosx"}
 source = {
-  url = "git+https://github.com/SuriyaRuk/kong-plugin-path-prefix.git"
+  url = "git+https://github.com/FactoryFixInc/kong-plugin-path-prefix.git"
 }
 
 description = {
